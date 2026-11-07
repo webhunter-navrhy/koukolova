@@ -45,7 +45,8 @@
     },
     {
       "text": "Objednání",
-      "href": "#objednani"
+      "href": "#objednani",
+      "class": "nav-cta"
     },
     {
       "text": "Kontakt",

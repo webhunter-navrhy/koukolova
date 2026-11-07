@@ -15,40 +15,40 @@
 </section>
 
 <section class="sekce" id="o-mne">
-  <div class="wrap uzky">
+  <div class="wrap"><div class="uzky">
     <h2>O mně</h2>
     <p class="vel">Jsem Gabriela Koukolová a v Žádlovicích mám svou terapeutovnu. Pracuji s dětmi a dospívajícími i s dospělými, s páry a s celými rodinami.</p>
     <p>Někdy je potřeba, aby se o dítě někdo postaral jinak než doma. Jindy se potřebují znovu najít partneři nebo si rodina nastavit pravidla, která fungují pro všechny. Nabízím klidné místo a čas, kde se to dá bez tlaku zkusit.</p>
     <div class="video" role="img" aria-label="Místo pro video o Gabriele Koukolové">
       <span class="play" aria-hidden="true"></span>
-      <p><strong>Video o mně</strong><br>Sem vložíme Vaše krátké video, aby si Vás klienti mohli poslechnout ještě před prvním setkáním.</p>
-    </div>
+      <p><em class="stitek">doplníme</em><strong>Video o mně</strong><br>Sem vložíme Vaše krátké video, aby si Vás klienti mohli poslechnout ještě před prvním setkáním.</p>
+    </div></div>
   </div>
 </section>
 
 <section class="sekce sv" id="sluzby">
   <div class="wrap">
     <h2>S čím pomáhám</h2>
-    <ul class="karty" role="list">
-      {% for s in data.sluzby %}<li><span class="cislo">0{{ loop.index }}</span><h3>{{ s.nazev }}</h3><p>{{ s.popis }}</p></li>{% endfor %}
+    <ul class="sezn" role="list">
+      {% for s in data.sluzby %}<li><h3>{{ s.nazev }}</h3><p>{{ s.popis }}</p></li>{% endfor %}
     </ul>
   </div>
 </section>
 
 <section class="sekce" id="vzdelani">
-  <div class="wrap uzky">
+  <div class="wrap"><div class="uzky">
     <h2>Vzdělání</h2>
     <ol class="osa">
       <li><strong>Pedagogická fakulta Univerzity Palackého v Olomouci</strong><span>Studium, na které navazuje psychoterapeutická praxe.</span></li>
-      <li class="dopl"><strong>Výcviky a kurzy</strong><span>Sem doplníme Vaše výcviky, certifikáty a členství v odborných společnostech.</span></li>
+      <li class="dopl"><strong><em class="stitek">doplníme</em>Výcviky a kurzy</strong><span>Sem doplníme Vaše výcviky, certifikáty a členství v odborných společnostech.</span></li>
     </ol>
-  </div>
+  </div></div>
 </section>
 
 <section class="sekce sv" id="objednani">
   <div class="wrap">
     <h2>Objednání online</h2>
-    <p class="vel uzky">Vyberte, o jaké setkání máte zájem, a zvolte si termín. Potvrzení Vám přijde e-mailem.</p>
+    <p class="vel uzky" style="margin-left:0">Vyberte, o jaké setkání máte zájem, a zvolte si termín. Potvrzení Vám přijde e-mailem.</p>
     <form class="rez formular" method="post" data-endpoint="{{ site.formular.endpoint }}" data-demo="1">
       <fieldset><legend>1. Druh setkání</legend>
         <div class="volby">
