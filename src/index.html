@@ -1,0 +1,89 @@
+{% extends "_base.html" %}
+{% set titulek = 'Gabriela Koukolová – rodinná a párová terapie, Žádlovice' %}
+{% set cesta = '' %}
+{% block obsah %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="kicker">Žádlovice · terapeutovna</p>
+      <h1>Místo, kde můžete porozumět sobě, svým vztahům i životním výzvám</h1>
+      <p class="lead">Rodinná a párová terapie, psychoterapie dětí a dospívajících, sandplay a Grofovo dýchání.</p>
+      <p class="akce"><a class="btn" href="#objednani">Objednat se</a> <a class="btn btn-sv" href="#o-mne">Kdo jsem</a></p>
+    </div>
+    <div class="hero-foto">{{ img('gabriela.jpg', 'Gabriela Koukolová, terapeutka', sizes='(min-width: 60rem) 28rem, 80vw') }}</div>
+  </div>
+</section>
+
+<section class="sekce" id="o-mne">
+  <div class="wrap uzky">
+    <h2>O mně</h2>
+    <p class="vel">Jsem Gabriela Koukolová a v Žádlovicích mám svou terapeutovnu. Pracuji s dětmi a dospívajícími i s dospělými, s páry a s celými rodinami.</p>
+    <p>Někdy je potřeba, aby se o dítě někdo postaral jinak než doma. Jindy se potřebují znovu najít partneři nebo si rodina nastavit pravidla, která fungují pro všechny. Nabízím klidné místo a čas, kde se to dá bez tlaku zkusit.</p>
+    <div class="video" role="img" aria-label="Místo pro video o Gabriele Koukolové">
+      <span class="play" aria-hidden="true"></span>
+      <p><strong>Video o mně</strong><br>Sem vložíme Vaše krátké video, aby si Vás klienti mohli poslechnout ještě před prvním setkáním.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sekce sv" id="sluzby">
+  <div class="wrap">
+    <h2>S čím pomáhám</h2>
+    <ul class="karty" role="list">
+      {% for s in data.sluzby %}<li><span class="cislo">0{{ loop.index }}</span><h3>{{ s.nazev }}</h3><p>{{ s.popis }}</p></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="sekce" id="vzdelani">
+  <div class="wrap uzky">
+    <h2>Vzdělání</h2>
+    <ol class="osa">
+      <li><strong>Pedagogická fakulta Univerzity Palackého v Olomouci</strong><span>Studium, na které navazuje psychoterapeutická praxe.</span></li>
+      <li class="dopl"><strong>Výcviky a kurzy</strong><span>Sem doplníme Vaše výcviky, certifikáty a členství v odborných společnostech.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sekce sv" id="objednani">
+  <div class="wrap">
+    <h2>Objednání online</h2>
+    <p class="vel uzky">Vyberte, o jaké setkání máte zájem, a zvolte si termín. Potvrzení Vám přijde e-mailem.</p>
+    <form class="rez formular" method="post" data-endpoint="{{ site.formular.endpoint }}" data-demo="1">
+      <fieldset><legend>1. Druh setkání</legend>
+        <div class="volby">
+          {% for s in data.sluzby %}<label class="chip"><input type="radio" name="druh" value="{{ s.nazev }}" {% if loop.first %}checked{% endif %}><span>{{ s.nazev }}</span></label>{% endfor %}
+        </div>
+      </fieldset>
+      <fieldset><legend>2. Termín <small>(ukázka, skutečné volné termíny napojíme na Váš kalendář)</small></legend>
+        <div class="dny" id="dny"></div>
+        <div class="casy" id="casy"></div>
+        <input type="hidden" name="termin" id="termin">
+      </fieldset>
+      <fieldset><legend>3. Kontakt</legend>
+        <div class="pole">
+          <label>Jméno <input name="jmeno" autocomplete="name" required></label>
+          <label>E-mail <input name="email" type="email" autocomplete="email" required></label>
+          <label>Telefon <input name="telefon" type="tel" autocomplete="tel"></label>
+        </div>
+        <label>Krátká zpráva (nepovinné) <textarea name="zprava" rows="3"></textarea></label>
+      </fieldset>
+      <div class="past" aria-hidden="true"><label>Nevyplňovat <input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit" class="btn">Odeslat objednávku</button>
+      <p class="formular-stav" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section class="sekce" id="kontakt">
+  <div class="wrap kont">
+    <div>
+      <h2>Kontakt</h2>
+      <p class="vel">Terapeutovna v Žádlovicích</p>
+      <p><a href="tel:{{ site.kontakt.telefon|replace(' ','') }}">{{ site.kontakt.telefon }}</a><br><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a></p>
+      <p class="mala">Přesnou adresu a pokyny, jak se k nám dostanete, pošleme s potvrzením termínu.</p>
+    </div>
+    <p class="mala krize">Pokud jde o akutní krizi, volejte prosím Linku bezpečí 116 111 nebo tísňovou linku 112.</p>
+  </div>
+</section>
+{% endblock %}

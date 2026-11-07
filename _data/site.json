@@ -1,0 +1,55 @@
+{
+  "slug": "koukolova",
+  "nazev": "Gabriela Koukolová",
+  "url": "https://webhunter-navrhy.github.io/koukolova/",
+  "base": "/koukolova/",
+  "lang": "cs",
+  "popis": "Gabriela Koukolová – rodinná a párová terapie, psychoterapie dětí a dospívajících, sandplay a Grofovo dýchání. Terapeutovna v Žádlovicích, online objednání.",
+  "navrh": true,
+  "domena": "",
+  "og_image": "gabriela.jpg",
+  "logo": "",
+  "theme_color": "#f4efe6",
+  "typ": "LocalBusiness",
+  "ico": "",
+  "kontakt": {
+    "email": "gabrielakoukolova@seznam.cz",
+    "telefon": "739 312 031",
+    "adresa": {
+      "ulice": "",
+      "psc": "",
+      "mesto": "Žádlovice",
+      "zeme": "CZ"
+    }
+  },
+  "oteviraci_doba": [],
+  "sameas": [],
+  "cenove_rozpeti": "",
+  "formular": {
+    "endpoint": "",
+    "demo": true,
+    "predmet": "Objednání z webu – Koukolová"
+  },
+  "nav": [
+    {
+      "text": "O mně",
+      "href": "#o-mne"
+    },
+    {
+      "text": "Služby",
+      "href": "#sluzby"
+    },
+    {
+      "text": "Vzdělání",
+      "href": "#vzdelani"
+    },
+    {
+      "text": "Objednání",
+      "href": "#objednani"
+    },
+    {
+      "text": "Kontakt",
+      "href": "#kontakt"
+    }
+  ]
+}
