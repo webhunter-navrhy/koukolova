@@ -74,3 +74,11 @@ label{display:block;font-size:.92rem;font-weight:500}input:not([type=radio]),tex
 @media(min-width:53rem){#o-mne .video{max-width:none}}
 .paticka a{display:inline-flex;align-items:center;min-height:2.75rem}
 @media(max-width:52rem){.hero-foto{max-width:16rem;margin:0 auto}.hero-text{text-align:left}}
+
+.dva{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center}.dva .uzky{max-width:none}.dva .video{margin-top:0}
+.vin-box{background:var(--sv);border-radius:1.2rem;overflow:hidden;line-height:0}.vin-box svg{width:100%;height:auto}
+.vin-s{width:7rem;height:auto;margin:0 0 .8rem;border-radius:.6rem}
+.rez-wrap{display:grid;grid-template-columns:1.7fr 1fr;gap:1.5rem;align-items:start;margin-top:2rem}.rez-wrap .rez{margin-top:0}
+.teraf{padding:1.5rem;border-radius:1rem;border:1.5px dashed var(--acc);color:var(--muted);font-size:.98rem;min-height:12rem;display:flex;align-items:center}.teraf p{margin:0}
+#kontakt p a{display:flex;width:100%;padding:.6rem 0;min-height:2.75rem}
+@media(max-width:52rem){.dva,.rez-wrap{grid-template-columns:1fr}.hero-foto{max-width:16.5rem;margin:0 auto}.teraf{order:-1;min-height:0}.rez-wrap{gap:1rem}}

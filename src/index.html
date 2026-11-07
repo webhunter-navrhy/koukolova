@@ -15,14 +15,14 @@
 </section>
 
 <section class="sekce" id="o-mne">
-  <div class="wrap"><div class="uzky">
+  <div class="wrap dva"><div class="uzky">
     <h2>O mně</h2>
     <p class="vel">Jsem Gabriela Koukolová a v Žádlovicích mám svou terapeutovnu. Pracuji s dětmi a dospívajícími i s dospělými, s páry a s celými rodinami.</p>
-    <p>Někdy je potřeba, aby se o dítě někdo postaral jinak než doma. Jindy se potřebují znovu najít partneři nebo si rodina nastavit pravidla, která fungují pro všechny. Nabízím klidné místo a čas, kde se to dá bez tlaku zkusit.</p>
+    <p>Někdy je potřeba, aby se o dítě někdo postaral jinak než doma. Jindy se potřebují znovu najít partneři nebo si rodina nastavit pravidla, která fungují pro všechny. Nabízím klidné místo a čas, kde se to dá bez tlaku zkusit.</p></div>
     <div class="video" role="img" aria-label="Místo pro video o Gabriele Koukolové">
       <span class="play" aria-hidden="true"></span>
       <p><em class="stitek">doplníme</em><strong>Video o mně</strong><br>Sem vložíme Vaše krátké video, aby si Vás klienti mohli poslechnout ještě před prvním setkáním.</p>
-    </div></div>
+    </div>
   </div>
 </section>
 
@@ -38,26 +38,27 @@
   <div class="wrap">
     <h2>S čím pomáhám</h2>
     <ul class="sezn" role="list">
-      {% for s in data.sluzby %}<li><h3>{{ s.nazev }}</h3><p>{{ s.popis }}</p></li>{% endfor %}
+      {% for s in data.sluzby %}<li><h3>{{ s.nazev }}</h3>{% if s.nazev == "Sandplay" %}<svg class="vin vin-s" viewBox="0 0 240 120" aria-hidden="true"><path d="M0 70C50 50 100 85 150 66s60-14 90 0V120H0Z" fill="#dcc9a3"/><path d="M0 95C60 80 120 108 180 92s40-6 60 2V120H0Z" fill="#cdb78a"/><g fill="#2b2a28" opacity=".85"><circle cx="120" cy="46" r="7"/><path d="M108 84c0-20 6-30 12-30s12 10 12 30z"/><circle cx="150" cy="56" r="5"/><path d="M142 86c0-14 4-22 8-22s8 8 8 22z"/></g><ellipse cx="60" cy="92" rx="22" ry="10" fill="#4f6b5a"/></svg>{% endif %}<p>{{ s.popis }}</p></li>{% endfor %}
     </ul>
   </div>
 </section>
 
 <section class="sekce" id="vzdelani">
-  <div class="wrap"><div class="uzky">
+  <div class="wrap dva"><div class="uzky">
     <h2>Vzdělání</h2>
     <ol class="osa">
       <li><strong>Pedagogická fakulta Univerzity Palackého v Olomouci</strong><span>Studium, na které navazuje psychoterapeutická praxe.</span></li>
       <li class="dopl"><strong><em class="stitek">doplníme</em>Výcviky a kurzy</strong><span>Sem doplníme Vaše výcviky, certifikáty a členství v odborných společnostech.</span></li>
     </ol>
-  </div></div>
+  </div>
+  <div class="vin-box" role="img" aria-label="Ilustrace: písek a figurky, motiv sandplay"><svg class="vin" viewBox="0 0 240 120" aria-hidden="true"><path d="M0 70C50 50 100 85 150 66s60-14 90 0V120H0Z" fill="#dcc9a3"/><path d="M0 95C60 80 120 108 180 92s40-6 60 2V120H0Z" fill="#cdb78a"/><g fill="#2b2a28" opacity=".85"><circle cx="120" cy="46" r="7"/><path d="M108 84c0-20 6-30 12-30s12 10 12 30z"/><circle cx="150" cy="56" r="5"/><path d="M142 86c0-14 4-22 8-22s8 8 8 22z"/></g><ellipse cx="60" cy="92" rx="22" ry="10" fill="#4f6b5a"/></svg></div></div>
 </section>
 
 <section class="sekce sv" id="objednani">
   <div class="wrap">
     <h2>Objednání online</h2>
     <p class="vel uzky" style="margin-left:0">Vyberte, o jaké setkání máte zájem, a zvolte si termín. Potvrzení Vám přijde e-mailem.</p>
-    <form class="rez formular" method="post" data-endpoint="{{ site.formular.endpoint }}" data-demo="1">
+    <div class="rez-wrap"><form class="rez formular" method="post" data-endpoint="{{ site.formular.endpoint }}" data-demo="1">
       <fieldset><legend>1. Druh setkání</legend>
         <div class="volby">
           {% for s in data.sluzby %}<label class="chip"><input type="radio" name="druh" value="{{ s.nazev }}" {% if loop.first %}checked{% endif %}><span>{{ s.nazev }}</span></label>{% endfor %}
@@ -80,6 +81,7 @@
       <button type="submit" class="btn">Odeslat objednávku</button>
       <p class="formular-stav" role="status" aria-live="polite"></p>
     </form>
+    <div class="teraf" role="img" aria-label="Místo pro fotku terapeutovny"><p><em class="stitek">doplníme</em><strong>Terapeutovna v Žádlovicích</strong><br>Sem přijde fotka prostoru, aby klienti věděli, kam přijdou.</p></div></div>
   </div>
 </section>
 
